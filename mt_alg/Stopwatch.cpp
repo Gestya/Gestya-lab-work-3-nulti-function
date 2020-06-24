@@ -1,7 +1,7 @@
 #include "Stopwatch.h"
 #include <iostream>
 
-#if WIN32
+
 #include <Windows.h>
 #include <cassert>
 #include <cstdio>
@@ -37,17 +37,6 @@ private:
 	LARGE_INTEGER frequency;
 	LARGE_INTEGER start_count;
 };
-#else
-class StopwatchImpl
-{
-public:
-	StopwatchImpl() = default;				// No implementtion yet
-	~StopwatchImpl() = default;				// No implementtion yet
-
-	void reset() {}						// No implementtion yet
-	double get_time() { return 0; }		// No implementtion yet
-};
-#endif
 
 
 Stopwatch::Stopwatch()
